@@ -1,11 +1,13 @@
 *Settings*
 Documentation       Base
 
-Resource     ../routes/tracksRoute.robot
 Library    RequestsLibrary
+
+Resource     ../routes/tracksRoute.robot
+Library     ../factories/Track.py
 *Variables*
 
 # Token temporário ira expirar em uma hora
-${auth}            Bearer BQCOOqTlc5pQZyd6mm_csCPQawmhLJdJrfZUHdo_RfAnhL45k-I7VH2NKZuKoaqQeQ7JZugI3iOSjIudzfwTGRuPQDsRQaMnLc-1vfWKq4AZfbKgbAc8UNJTE7COUyKe7LusV17cgioJTk2hKYz_AzFp4TZVx0-uViGhNYAL3YjYCv6FUhsvCRfju_XT0JStB-SeHZmcf4arj9UhfjAbIsP9wpUxnoN-bpnkRnl8zNbb4Uo7jp6EMdTscnoyGt7gCw
+${auth}            Bearer BQD8WTIREM52CTcMxj3JSUGZazo__iyx7IHDSrrGehqy1g7dM4_cMz1W9_23lsWrYJ_tWlqDRpeG-yjV1YR4COjD_p26cJv0aeRH4ajRkQ93CFLPDuhz7pNHcw4UeGfs79Xn0zevCVMrNL08pt0m0NrmIlgrvHQ-MQ7zZLrOxWWgTyFAnsuEzP4boVM-8y9B1o-BCCNB91MRT1k5_Gm1CQfFIk_oqesqMUvny2HJPzs3utX51SYfNJK9wN-8oL6IGA
 # Rota principal
 ${url_spotify}          https://api.spotify.com
