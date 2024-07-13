@@ -40,29 +40,3 @@ robot -d ./reports ContaPF.robot
 
 [Documentação Biblioteca Request](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Get%20File%20For%20Streaming%20Upload)
 
-# Docker (Pra quem faz teste local)
-- Esse do spotify não é necessário mas fica ai um tutorial extra;
-
-#### Instalação 
-https://docs.docker.com/engine/install/
-
-#### Instalação de dependecias pelo docker file
-docker build -t robot-framework:1.0 .
-
-#### Rodar o docker
-docker run robot-framework:1.0
-
-docker run -it robot-framework:1.0 bash
-
-#### Interagir com o terminal bash do docker
-
-docker exec -iti bash
-
-#### Listar containers
-
-docker ps
-docker ps -a
-
-#### Desligar container
-
-docker stop id_container
