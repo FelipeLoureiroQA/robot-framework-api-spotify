@@ -1,7 +1,9 @@
 *** Settings ***
-Library           RequestsLibrary
 
-Resource    ../resources/Base.robot
+Library           RequestsLibrary
+Library    ../factories/Track.py
+
+Resource    ../resources/Variables.robot
 
 *** Test Cases ***
 Listas musicas

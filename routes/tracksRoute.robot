@@ -1,11 +1,13 @@
 *Settings*
 
-Resource     ../resources/Base.robot
-
+Resource     ../resources/Variables.robot
 
 *Keywords*
+
+
 GET Tracks
-    [Arguments]                                                                                                                                                                                                                                                                        
+    [Arguments]   
+                                                                                                                                                                                                                                                                         
     ${headers}     Create Dictionary                                                                                                                                                                                                                                                                        
     ...            Authorization=${auth} 
     ${response}    GET                                                                                                                                                                                                                                                                                      
