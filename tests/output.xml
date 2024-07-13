@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on linux)" generated="20240712 23:07:07.019" rpa="false" schemaversion="3">
+<suite id="s1" name="Token" source="/home/felipe/VSCODE/robot-framework-api-spotify/tests/token.robot">
+<test id="s1-t1" name="Listas musica" line="7">
+<kw name="GET Tracks" library="tokenRoutes">
+<var>${response}</var>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Authorization=${auth}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240712 23:07:07.091" level="INFO">${headers} = {'Authorization': 'Bearer BQCOOqTlc5pQZyd6mm_csCPQawmhLJdJrfZUHdo_RfAnhL45k-I7VH2NKZuKoaqQeQ7JZugI3iOSjIudzfwTGRuPQDsRQaMnLc-1vfWKq4AZfbKgbAc8UNJTE7COUyKe7LusV17cgioJTk2hKYz_AzFp4TZVx0-uViGhNYAL3YjYCv...</msg>
+<status status="PASS" starttime="20240712 23:07:07.090" endtime="20240712 23:07:07.091"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${url_spotify}/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20240712 23:07:07.599" level="INFO">GET Request : url=https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V 
+ path_url=/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer BQCOOqTlc5pQZyd6mm_csCPQawmhLJdJrfZUHdo_RfAnhL45k-I7VH2NKZuKoaqQeQ7JZugI3iOSjIudzfwTGRuPQDsRQaMnLc-1vfWKq4AZfbKgbAc8UNJTE7COUyKe7LusV17cgioJTk2hKYz_AzFp4TZVx0-uViGhNYAL3YjYCv6FUhsvCRfju_XT0JStB-SeHZmcf4arj9UhfjAbIsP9wpUxnoN-bpnkRnl8zNbb4Uo7jp6EMdTscnoyGt7gCw'} 
+ body=None 
+ </msg>
+<msg timestamp="20240712 23:07:07.599" level="INFO">GET Response : url=https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V 
+ status=200, reason=OK 
+ headers={'content-type': 'application/json; charset=utf-8', 'cache-control': 'public, max-age=0', 'x-robots-tag': 'noindex, nofollow', 'access-control-allow-origin': '*', 'access-control-allow-headers': 'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token', 'access-control-allow-methods': 'GET, POST, OPTIONS, PUT, DELETE, PATCH', 'access-control-allow-credentials': 'true', 'access-control-max-age': '604800', 'content-encoding': 'gzip', 'strict-transport-security': 'max-age=31536000', 'x-content-type-options': 'nosniff', 'date': 'Sat, 13 Jul 2024 02:07:07 GMT', 'server': 'envoy', 'Via': 'HTTP/2 edgeproxy, 1.1 google', 'Transfer-Encoding': 'chunked'} 
+ body={"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/08td7MxkoHQkXnWAYD8d6Q"},"href":"https://api.spotify.com/v1/artists/08td7MxkoHQkXnWAYD8d6Q","id":"08td7MxkoHQkXnWAYD8d6Q","name":"Tania Bowra","type":"artist","uri":"spotify:artist:08td7MxkoHQkXnWAYD8d6Q"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"external_urls":{"spotify":"https://open.spotify.com/album/6akEvsycLGftJxYudPjmqK"},"href":"https://api.spotify.com/v1/albums/6akEvsycLGftJxYudPjmqK","id":"6akEvsycLGftJxYudPjmqK","images":[{"url":"https://i.scdn.co/image/ab67616d0000b2731ae2bdc1378da1b440e1f610","width":640,"height":640},{"url":"https://i.scdn.co/image/ab67616d00001e021ae2bdc1378da1b440e1f610","width":300,"height":300},{"url":"https://i.scdn.co/image/ab67616d000048511ae2bdc1378da1b440e1f610","width":64,"height":64}],"name":"Place In The Sun","release_date":"2004-02-02","release_date_precision":"day","total_tracks":11,"type":"album","uri":"spotify:album:6akEvsycLGftJxYudPjmqK"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/08td7MxkoHQkXnWAYD8d6Q"},"href":"https://api.spotify.com/v1/artists/08td7MxkoHQkXnWAYD8d6Q","id":"08td7MxkoHQkXnWAYD8d6Q","name":"Tania Bowra","type":"artist","uri":"spotify:artist:08td7MxkoHQkXnWAYD8d6Q"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"disc_number":1,"duration_ms":276773,"explicit":false,"external_ids":{"isrc":"AUCR10410001"},"external_urls":{"spotify":"https://open.spotify.com/track/2TpxZ7JUBn3uw46aR7qd6V"},"href":"https://api.spotify.com/v1/tracks/2TpxZ7JUBn3uw46aR7qd6V","id":"2TpxZ7JUBn3uw46aR7qd6V","is_local":false,"name":"All I Want","popularity":1,"preview_url":"https://p.scdn.co/mp3-preview/2cc385470731bc540a08caef5eab31dec7b036a6?cid=cfe923b2d660439caf2b557b21f31221","track_number":1,"type":"track","uri":"spotify:track:2TpxZ7JUBn3uw46aR7qd6V"} 
+ </msg>
+<msg timestamp="20240712 23:07:07.599" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240712 23:07:07.091" endtime="20240712 23:07:07.599"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${auth}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240712 23:07:07.601" level="INFO">Bearer BQCOOqTlc5pQZyd6mm_csCPQawmhLJdJrfZUHdo_RfAnhL45k-I7VH2NKZuKoaqQeQ7JZugI3iOSjIudzfwTGRuPQDsRQaMnLc-1vfWKq4AZfbKgbAc8UNJTE7COUyKe7LusV17cgioJTk2hKYz_AzFp4TZVx0-uViGhNYAL3YjYCv6FUhsvCRfju_XT0JStB-SeHZmcf4arj9UhfjAbIsP9wpUxnoN-bpnkRnl8zNbb4Uo7jp6EMdTscnoyGt7gCw</msg>
+<status status="PASS" starttime="20240712 23:07:07.600" endtime="20240712 23:07:07.601"/>
+</kw>
+<msg timestamp="20240712 23:07:07.601" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240712 23:07:07.090" endtime="20240712 23:07:07.601"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20240712 23:07:07.601" endtime="20240712 23:07:07.601"/>
+</kw>
+<status status="PASS" starttime="20240712 23:07:07.090" endtime="20240712 23:07:07.602"/>
+</test>
+<status status="PASS" starttime="20240712 23:07:07.021" endtime="20240712 23:07:07.602"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Token">Token</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
