@@ -9,4 +9,5 @@ factories/__pycache__/
 tests/Singn In/.reports/
 poetry.lock
 node_modules
+Secret.robot
 
