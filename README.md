@@ -1,5 +1,5 @@
 # Testando a API do spotify com robot-framework
-- Um exemplo simples mas bem estruturado
+- Alguns exemplos em uma API real.
 
 # Instruções de Instação para API, E2E e gerenciadores 
 
