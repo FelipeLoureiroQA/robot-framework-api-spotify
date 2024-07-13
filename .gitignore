@@ -10,4 +10,5 @@ tests/Singn In/.reports/
 poetry.lock
 node_modules
 Secret.robot
+__pycache__
 
