@@ -1,7 +1,7 @@
 *Settings*
 Documentation       Base
 
-Resource     ../routes/tokenRoutes.robot
+Resource     ../routes/tracksRoute.robot
 Library    RequestsLibrary
 *Variables*
 
