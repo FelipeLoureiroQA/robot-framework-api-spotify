@@ -36,41 +36,6 @@ Caso ocorra algum problema na biblioteca faker: pip install Faker
 
 robot -d ./reports ContaPF.robot
 
-# Algumas formas pra validar o response
-#### Acessar response e utilizar os dados
-`${id_account}= Set Variable ${response.json()['id']}`
-
-`Set Global Variable ${id_account} ${response.json()['id']}`
-
-#### Outros Comandos
-`robot --loglevel debug Documents.robot`
-`/VindiRobot/API/tests/Singn In$ pabot ContaVerificada.robot'`
-
-#### Compara conteudo igual request (payload)/response
-`Should Contain ${payload["name"]} ${response.json()["name"]}`
-
-#### Confirma se conteudo retorna false
-`Should Not Be True ${response.json()["auto_withdraw"]}`
-
-#### Confirma se conteudo retorna numero inteiro
-`Should Be True isinstance(${response.json()["id"]}, int)`
-
-`${is_int}= Evaluate isinstance(${response.json()['id']}, int)`
-
-#### Confirma se conteudo retorna numero maior que
-`Should Be True ${response.json()['id']} > 1000`
-
-#### Confirma se conteudo retorna uma string
-`Should Be String ${response.json()['name']} `
-  
-`Should Be True        isinstance('${response.json()["name"]}', str)`
-
-#### Confirma se um valor é null/none
-`Should Be True ${response.json()["fantasy_name"]} == None`
-
-#### Como saber o tipo do dado?
-`${id_account}    Evaluate    type(${id_account})`
-
 #### Links Uteis
 
 [Documentação Biblioteca Request](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Get%20File%20For%20Streaming%20Upload)
