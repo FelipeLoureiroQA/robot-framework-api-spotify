@@ -1,36 +1,38 @@
-name: pipe for robot
+name: Robot Framework CI
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  robot:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-        python-version: "3.x"
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Install pip dependencies
-        uses: actions/setup-python@v2
-        run: |
-          python -m pip install --upgrade pip
-          pip install robotframework
-          pip install -r requirements.txt
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' 
 
-      - name: Run Robot Framework tests
-        uses: actions/setup-python@v2
-        run: |
-          mkdir -p results
-          robot --outputdir results tests/
-        continue-on-error: true
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework
 
-      - name: Archive test results
-        if: always()
-        uses: actions/upload-artifact@v2
-  with:
-    name: robot-results
-    path: results/
+    - name: Run Robot Framework tests
+      run: |
+        robot --outputdir results path/to/your/tests
+
+    - name: Archive test results
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: robot-results
+        path: results
