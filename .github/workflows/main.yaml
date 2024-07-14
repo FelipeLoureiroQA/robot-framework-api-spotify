@@ -14,17 +14,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 # Atualizado para v3
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4 # Atualizado para v4
         with:
           python-version: "3.x" # Substitua pela versão do Python que você deseja usar
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3 # Atualizado para v3
         with:
-          node-version: "16.x" # Substitua pela versão do Node.js que você deseja usar
+          node-version: "14" # Substitua pela versão do Node.js que você deseja usar
 
       - name: Install Node.js dependencies
         run: |
@@ -41,7 +41,7 @@ jobs:
 
       - name: Archive test results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3 # Atualizado para v3
         with:
           name: robot-results
           path: results
