@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  # pull_request:
-  #   branches:
-  #     - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   robot:
@@ -24,7 +24,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # Substitua pela versão do Node.js que você deseja usar
+          node-version: "16.x" # Substitua pela versão do Node.js que você deseja usar
 
       - name: Install Node.js dependencies
         run: |
