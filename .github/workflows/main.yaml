@@ -29,7 +29,9 @@ steps:
       continue-on-error: true
 
     - name: Archive test results
-      if: always()
+      if: success()
+      run: |
+        echo "Uploading test results to GitHub Pages..."
       uses: actions/upload-artifact@v2
   with:
     name: robot-results
