@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest 
-steps:
+    steps:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: Set up Python
@@ -31,6 +31,11 @@ steps:
     - name: Archive test results
       if: always()
       uses: actions/upload-artifact@v2
-  with:
-    name: robot-results
-    path: results/
+      with:
+        name: robot-results
+        path: results/
+
+    - name: Upload test results to GitHub Pages
+      if: success()
+      run: |
+        echo "Uploading test results to GitHub Pages..."
