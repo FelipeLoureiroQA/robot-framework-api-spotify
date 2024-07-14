@@ -13,7 +13,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://FelipeLoureiroQA.github.io/robot_pipeline/report.html
+      url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/report.html
 
     steps:
       - name: Clonagem Projeto
