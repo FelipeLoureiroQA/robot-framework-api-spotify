@@ -4,7 +4,6 @@ Resource     ../resources/Variables.robot
 
 *Keywords*
 
-
 GET Tracks
     [Arguments]   
                                                                                                                                                                                                                                                                          
