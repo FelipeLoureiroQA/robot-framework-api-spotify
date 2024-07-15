@@ -15,13 +15,13 @@ from dotenv import load_dotenv
 import os
 
 # Pra testar
-var = os.getenv('BEARER_TOKEN')
+var = os.getenv('token')
 print(var)
 
 def load_environment_variables():
     load_dotenv()
     for key, value in os.environ.items():
-        if key.startswith('BEARER_TOKEN'):
+        if key.startswith('token'):
             print(f'{key}={value}')
 
 if __name__ == '__main__':
