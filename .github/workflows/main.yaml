@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12"]
+        python-version: ["3.12"]
 
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +34,7 @@ jobs:
           pip install python-dotenv
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Use secret
-        run: echo "${{ secrets.BEARER_TOKEN }}"
+        run: echo "My secret is ${{ secrets.BEARER_TOKEN }}"
       - name: Run Robot Framework tests
         run: |
           robot --outputdir results tests/
