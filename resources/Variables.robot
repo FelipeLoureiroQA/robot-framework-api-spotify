@@ -3,6 +3,7 @@ Documentation       Variaveis
 
 Resource    ../routes/tracksRoute.robot
 Resource    ../Secret.robot
+Resource    ../resources/Helper.robot
 
 Library    RequestsLibrary
 

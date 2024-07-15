@@ -1,16 +1,26 @@
+# from dotenv import load_dotenv
+# import os
+
+# load_dotenv()
+
+# BEARER_TOKEN = os.getenv('BEARER_TOKEN')
+
+# def bearer():
+#     BEARER_TOKEN = BEARER_TOKEN.connect(
+#     BEARER_TOKEN="BEARER_TOKEN"
+# )
+#     return BEARER_TOKEN
+
 from dotenv import load_dotenv
 import os
 
-def load_env_vars():
+def load_environment_variables():
     load_dotenv()
-    
-os.environ["BEARER_TOKEN"]
+    for key, value in os.environ.items():
+        if key.startswith('BEARER_TOKEN'):
+            print(f'{key}={value}')
 
-#     env_vars = {
-#         'BEARER_TOKEN': os.getenv('BEARER_TOKEN'),
-#     }
+if __name__ == '__main__':
+    load_environment_variables()
 
-#     return env_vars
 
-# if __name__ == "__main__":
-#     load_env_vars()
