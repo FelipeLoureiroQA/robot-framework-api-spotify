@@ -30,7 +30,7 @@ jobs:
           pip install robotframework-requests
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Use secret
-        run: echo "My secret is ${{ secrets.MY_SECRET }}"
+        run: echo "${{ secrets.BEARER_TOKEN }}"
       - name: Run Robot Framework tests
         run: |
           robot --outputdir results tests/
