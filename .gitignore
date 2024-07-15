@@ -11,4 +11,4 @@ poetry.lock
 node_modules
 Secret.robot
 __pycache__
-
+.env
