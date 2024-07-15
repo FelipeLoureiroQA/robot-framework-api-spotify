@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.11", "3.12"]
 
     steps:
       - uses: actions/checkout@v4
@@ -29,3 +29,13 @@ jobs:
           pip install robotframework
           pip install robotframework-requests
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run Robot Framework tests
+        run: |
+          robot --outputdir results tests/
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./results
