@@ -5,7 +5,7 @@ def load_env_vars():
     load_dotenv()
 
     env_vars = {
-        'BEARER_TOKEN': os.getenv('BEARER_TOKEN'),
+        'BEARER_TOKEN': os.environ('BEARER_TOKEN'),
     }
 
     return env_vars
