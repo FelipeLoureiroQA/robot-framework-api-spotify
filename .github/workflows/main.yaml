@@ -1,56 +1,75 @@
-name: Pipeline Test
 
-on: push
+name: Node.js CI
+
+on: [push]
 
 jobs:
-  test:
-    name: Testes de API
+  build:
+
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/report.html
-
     steps:
-      - name: Clonagem Projeto
-        uses: actions/checkout@v3
-
-      - name: Configuração do Python
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: '20.x'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+# name: Pipeline Test
 
-      - name: Instalar Dependencias do Projeto
-        run: |
-          pip install robotframework
-          pip install robotframework-requests
+# on: push
 
-      - name: Execução dos Testes de API
-        run: |
-          robot --outputdir results/ tests/
+# jobs:
+#   test:
+#     name: Testes de API
+#     runs-on: ubuntu-latest
 
-      - name: Salvando Resultado dos Testes
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: resultado-testes
-          path: /results
+#     permissions:
+#       contents: read
+#       pages: write
+#       id-token: write
+#     environment:
+#       name: github-pages
+#       url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/report.html
 
-      - name: Configurar Site de Relatorios dos Testes
-        uses: actions/configure-pages@v5
-        if: always()
+    # steps:
+    #   - name: Clonagem Projeto
+    #     uses: actions/checkout@v3
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        if: always()
-        with:
-          path: results/
+    #   - name: Configuração do Python
+    #     uses: actions/setup-python@v2
+    #     with:
+    #       python-version: "3.12"
 
-      - name: Relatorios dos Testes
-        id: deployment
-        uses: actions/deploy-pages@v4
-        if: always()
+    #   - name: Instalar Dependencias do Projeto
+    #     run: |
+    #       pip install robotframework
+    #       pip install robotframework-requests
+
+    #   - name: Execução dos Testes de API
+    #     run: |
+    #       robot --outputdir results/ tests/
+
+    #   - name: Salvando Resultado dos Testes
+    #     uses: actions/upload-artifact@v4
+    #     if: always()
+    #     with:
+    #       name: resultado-testes
+    #       path: /results
+
+    #   - name: Configurar Site de Relatorios dos Testes
+    #     uses: actions/configure-pages@v5
+    #     if: always()
+
+    #   - name: Upload artifact
+    #     uses: actions/upload-pages-artifact@v3
+    #     if: always()
+    #     with:
+    #       path: results/
+
+    #   - name: Relatorios dos Testes
+    #     id: deployment
+    #     uses: actions/deploy-pages@v4
+    #     if: always()
