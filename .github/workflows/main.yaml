@@ -10,7 +10,7 @@ on:
     branches: ["main"]
 
 env: 
-  token: ${{ secrets.BEARER_TOKEN }}
+  BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
 
 jobs:
   build:
