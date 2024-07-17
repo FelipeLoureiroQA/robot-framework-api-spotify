@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot ./tests
+          robot -d ./tests/reports tests
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -54,7 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./reports
 
 
       - name: Deploy no GitHub Pages
@@ -62,4 +62,4 @@ jobs:
         if: always()
         with:
           name: reports
-          path: ./tests
+          path: ./tests/reports
