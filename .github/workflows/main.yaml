@@ -42,8 +42,7 @@ jobs:
         run: echo "My secret is ${{ secrets.BEARER_TOKEN }}"
       - name: Run Robot Framework tests
         run: |
-          robot -d results tests
-          # robot --outputdir results tests/
+          robot -d ./reports -i tests
 
       - name: Deploy no GitHub Pages
         uses: actions/upload-artifact@v4.3.4
