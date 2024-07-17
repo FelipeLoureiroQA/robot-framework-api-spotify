@@ -23,7 +23,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://FelipeLoureiroQA.github.io/test/report.html
+      url: https://FelipeLoureiroQA.github.io/tests/report.html
 
     steps:
       - uses: actions/checkout@v4
@@ -45,8 +45,9 @@ jobs:
           robot -d results tests
           # robot --outputdir results tests/
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy no GitHub Pages
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          name: reports
+          path: ./tests
