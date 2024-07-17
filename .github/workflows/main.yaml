@@ -70,4 +70,4 @@ jobs:
         if: always()
         with:
           name: reports
-          path: ./tests/reports/
+          path: ./tests/reports/report.html
