@@ -23,7 +23,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/tests/report.html
+      url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/tests/reports/report.html
 
     steps:
       - uses: actions/checkout@v4
@@ -49,4 +49,4 @@ jobs:
         if: always()
         with:
           name: reports
-          path: ./tests
+          path: ./reports
