@@ -15,7 +15,7 @@ GET Tracks
     ...            headers=${headers}
 
     Log            ${auth}
-    [RETURN]       ${response}
+    RETURN       ${response}
 
 PUT Tracks
     [Arguments]                                                                                                                                                                                                                                                                        
@@ -26,7 +26,7 @@ PUT Tracks
     ...            headers=${headers}
 
     Log            ${auth}
-    [RETURN]       ${response}
+    RETURN       ${response}
 
 Delete Tracks
     [Arguments]                                                                                                                                                                                                                                                                        
@@ -37,4 +37,4 @@ Delete Tracks
     ...            headers=${headers}
 
     Log            ${auth}
-    [return]       ${response}
+    RETURN       ${response}
