@@ -44,7 +44,7 @@ jobs:
       
       - name: Run Robot Framework tests
         run: |
-          robot -d ./reports tests
+          robot ./reports
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
