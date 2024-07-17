@@ -34,7 +34,7 @@ Caso ocorra algum problema na biblioteca faker: pip install Faker
 
 #### Rodar dentro de uma pasta especifica (recomendado)
 
-robot -d ./reports ContaPF.robot
+robot -d ./reports Exemplo.robot
 
 #### Links Uteis
 
