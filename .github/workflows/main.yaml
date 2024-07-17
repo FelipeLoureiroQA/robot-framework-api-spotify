@@ -23,7 +23,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/robot-framework-api-spotify/reports/report.html
+      url: https://FelipeLoureiroQA.github.io/robot-framework-api-spotify/tests/reports/report.html
 
     steps:
       - uses: actions/checkout@v4
@@ -42,11 +42,11 @@ jobs:
         run: echo "My secret is ${{ secrets.BEARER_TOKEN }}"
       - name: Run Robot Framework tests
         run: |
-          robot -d ./reports tests
+          robot -d ./tests/reports tests
 
       - name: Deploy no GitHub Pages
         uses: actions/upload-artifact@v4.3.4
         if: always()
         with:
           name: reports
-          path: ./reports
+          path: ./tests/report/report.html
