@@ -54,11 +54,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./tests
 
       - name: Deploy no GitHub Pages
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reports
-          path: /reports
+          path: ./tests
