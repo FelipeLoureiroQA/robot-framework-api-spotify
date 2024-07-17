@@ -25,6 +25,7 @@ jobs:
       name: github-pages
       url: https://felipeloureiroqa.github.io/robot-framework-api-spotify/report.html
 
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
