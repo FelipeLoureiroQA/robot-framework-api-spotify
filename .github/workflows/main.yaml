@@ -46,11 +46,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Download Artifacts
-        uses: actions/download-artifact@v4
-        with: 
-          name: robot-framework-report
-          path: ./tests/reports
+      # - name: Download Artifacts
+      #   uses: actions/download-artifact@v4
+      #   with: 
+      #     name: robot-framework-report
+      #     path: ./tests/reports
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
