@@ -11,7 +11,7 @@ ${auth}    value
 Retorna Bearer token
     ${auth}    Get Environment Variable    BEARER_TOKEN
     Log To Console    ${auth}
-    [return]  ${auth}
+    RETURN  ${auth}
 
 # *** Test Cases ***
 # Bearer token
