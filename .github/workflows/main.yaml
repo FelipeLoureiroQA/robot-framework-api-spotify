@@ -49,7 +49,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with: 
-          name: robot-framework-report
+          name: robot-framework-report/tests/reports
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
