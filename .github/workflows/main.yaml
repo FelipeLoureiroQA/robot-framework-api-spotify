@@ -23,7 +23,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://felipeloureiroqa.github.io./robot-framework-report-api/report.html
+      url: https://felipeloureiroqa.github.io./robot-framework-report-api/tests/reports/report.html
 
     steps:
       - uses: actions/checkout@v4
