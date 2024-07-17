@@ -50,7 +50,7 @@ jobs:
         if: always()
         with:
           name: robot-framework-report
-          path: /testes/reports/
+          path: ./testes/reports/report.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
