@@ -49,7 +49,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with: 
-          path: reports/
+          path: tests/reports/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
