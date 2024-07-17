@@ -57,7 +57,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with: 
-          path: tests/reports/report.html
+          path: tests/reports/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -69,4 +69,4 @@ jobs:
         if: always()
         with:
           name: reports
-          path: ./tests/reports/report.html
+          path: ./tests/reports/
