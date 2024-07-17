@@ -26,9 +26,9 @@ jobs:
       url: https://felipeloureiroqa.github.io/robot-framework-report-api/tests/reports/report.html
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.3.4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4.3.4
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
