@@ -62,7 +62,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./tests/reports/report.html
+          path: ./tests/reports/
 
       - name: Deploy no GitHub Pages
         uses: actions/upload-artifact@v4
