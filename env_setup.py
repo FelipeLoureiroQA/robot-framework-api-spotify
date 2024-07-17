@@ -5,14 +5,7 @@ load_dotenv()
 
 token = os.getenv('token')
 
-
-# def bearer():
-#     return os.getenv('token')
-
-
-
-# Pra testar
-
+# Pra testar se o token foi carregado corretamente
 print(token)
 
 
