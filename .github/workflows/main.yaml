@@ -48,14 +48,17 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        if: always()
 
       - name: Download Artifacts
         uses: actions/download-artifact@v4
+        if: always()
         with: 
           name: robot-framework-report
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        if: always()
         with:
           path: ./
 
