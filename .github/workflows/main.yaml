@@ -44,12 +44,12 @@ jobs:
           robot -d ./tests/reports tests
       
 
-      - name: Salvando o Report dos Testes
+      - name: Salvando o report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: robot-framework-report
-          path: ./*.html
+          path: ./testes/reports/report.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
