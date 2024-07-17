@@ -1,12 +1,19 @@
 *** Settings ***
-Library    Process
+
 Library    OperatingSystem
+Library    ../env_setup.py
 
+Resource    ../resources/Variables.robot
 *** Variables ***
-${BEARER_TOKEN}    ${CURDIR}/.env
+${auth}    value
 
-*** Test Cases ***
-Example Test Case
-    Run Process    python    load_env.py
-    ${BEARER_TOKEN}=    Get Environment Variable    MY_VARIABLE
-    Log    ${BEARER_TOKEN}
+*** Keywords ***
+Retorna Bearer token
+    ${auth}    Get Environment Variable    BEARER_TOKEN
+    Log To Console    ${auth}
+    [return]  ${auth}
+
+# *** Test Cases ***
+# Bearer token
+#    ${auth}        Retorna Bearer token
+#    Set Global Variable    ${auth}  

@@ -1,14 +1,14 @@
 *** Settings ***
 
-Library           RequestsLibrary
-Library    ../factories/Track.py
-
 Resource    ../resources/Variables.robot
 
 *** Test Cases ***
-Listas musicas
 
-    ${response}    GET Tracks     
+Bearer token
+   ${auth}        Retorna Bearer token
+   Set Global Variable    ${auth} 
+Listas musicas
+    ${response}    GET Tracks       ${auth}
     Status Should Be    200    ${response}
     
 Salvar musicas

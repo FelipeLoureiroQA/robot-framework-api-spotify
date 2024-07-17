@@ -1,15 +1,13 @@
 *Settings*
+
+Resource        ../routes/tracksRoute.robot  
+Resource        ../resources/Helper.robot
+
+Library         RequestsLibrary
+Library         ../factories/Track.py
+
 Documentation       Variaveis
 
-Resource    ../routes/tracksRoute.robot  
-Resource    ../Secret.robot
-Resource    ../resources/Helper.robot
-
-Library    RequestsLibrary
-
-
 *Variables*         
-
-${auth}            ${BEARER_TOKEN} 
-${url_spotify}          https://api.spotify.com
+${url_spotify}       https://api.spotify.com
 
