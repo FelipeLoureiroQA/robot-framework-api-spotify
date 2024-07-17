@@ -5,7 +5,7 @@ Resource    ../resources/Variables.robot
 *** Test Cases ***
 
 Bearer token
-   ${auth}        Retorna Bearer token
+   ${auth}        Retorna Bearer Token
    Set Global Variable    ${auth} 
 Listas musicas
     ${response}    GET Tracks       ${auth}

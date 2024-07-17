@@ -8,8 +8,8 @@ Resource    ../resources/Variables.robot
 ${auth}    value
 
 *** Keywords ***
-Retorna Bearer token
-    ${auth}    Get Environment Variable    BEARER_TOKEN
+Retorna Bearer Token
+    ${auth}    Get Environment Variable    token
     Log To Console    ${auth}
     RETURN  ${auth}
 

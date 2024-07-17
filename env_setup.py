@@ -3,31 +3,16 @@ import os
 
 load_dotenv()
 
-BEARER_TOKEN = os.getenv('BEARER_TOKEN')
+token = os.getenv('token')
 
-def bearer():
-    BEARER_TOKEN = BEARER_TOKEN.connect(
-    BEARER_TOKEN="BEARER_TOKEN"
-)
-    return BEARER_TOKEN
 
-def bearer():
-    return os.getenv('BEARER_TOKEN')
+# def bearer():
+#     return os.getenv('token')
 
-# import os
 
-# # Pra testar
-# token = os.getenv('token')
-# print(token)
 
-# # def load_environment_variables():
-# #     load_dotenv()
-# #     for key, value in os.environ.items():
-# #         if key.startswith('token'):
-# #             print(f'{key}={value}')
+# Pra testar
 
-# # if __name__ == '__main__':
-# #     load_environment_variables()
-
+print(token)
 
 
