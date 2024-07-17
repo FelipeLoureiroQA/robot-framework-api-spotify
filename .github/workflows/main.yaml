@@ -23,7 +23,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://FelipeLoureiroQA.github.io/tests/reports/report.html
+      url: https://felipeloureiroqa.github.io/tests/reports/report.html
 
     steps:
       - uses: actions/checkout@v4
