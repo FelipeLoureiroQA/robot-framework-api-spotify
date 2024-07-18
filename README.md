@@ -1,5 +1,9 @@
 # Testando a API do spotify com robot-framework
-- Alguns exemplos em uma API real.
+
+- Teste da API oficial do spotify, endpoint tracks;
+- Segurança de dados sensíveis com github secrets em cloud e configuração dos dados locais em um arquivos .env;
+- Deploy com github actions;
+- Relatórios salvos no github pages;
 
 # Instruções de Instação para API, E2E e gerenciadores 
 
@@ -11,11 +15,11 @@
 6. [Instalação de gerenciador de pacotes e NodeJS (Para E2E)](https://nodejs.org/en/download/package-manager/)
 
 Alternativa de instalação de pip: sudo pip3 install robotframework
-Caso ocorra algum problema na biblioteca faker: pip install Faker
+caso ocorra algum problema na biblioteca faker: pip install Faker
 
-# Estrutura de Pastas 
+# Estrutura de Pastas
 
-**resources ou src** Váriaveis globalmente utilizadas como url,tokens etc
+**resources ou src** Helpers, váriaveis globalmente utilizadas como url,tokens etc
 
 **routes ou services:** Onde serão encapsuladas as keywords
 
