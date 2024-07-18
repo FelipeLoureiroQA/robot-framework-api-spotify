@@ -25,7 +25,6 @@ jobs:
       name: github-pages
       url: https://felipeloureiroqa.github.io/robot-framework-api-spotify/tests/reports/report.html
 
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
@@ -64,14 +63,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./
-
-      # - name: Deploy no GitHub Pages
-      #   uses: actions/upload-artifact@v4
-      #   if: always()
-      #   with:
-      #     name: reports
-      #     path: ./tests/reports/report.html
-
 
       - name: Deploy to Github Pages
         id: deployment
