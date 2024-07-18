@@ -4,9 +4,11 @@ Resource     ../resources/Variables.robot
    
 
 *Keywords*
-
+Retorna Bearer Token
+    ${auth}    Get Environment Variable    token
+    RETURN  ${auth}
 GET Tracks
-    
+    ${auth}     Retorna Bearer Token
     [Arguments]    ${auth}                                                                                                                                                                                                                                                      
     ${headers}     Create Dictionary                                                                                                                                                                                                                                                                     
     ...            Authorization=${auth} 
@@ -18,7 +20,8 @@ GET Tracks
     RETURN       ${response}
 
 PUT Tracks
-    [Arguments]                                                                                                                                                                                                                                                                        
+    [Arguments]   
+    ${auth}     Retorna Bearer Token                                                                                                                                                                                                                                                                     
     ${headers}     Create Dictionary                                                                                                                                                                                                                                                                        
     ...            Authorization=${auth} 
     ${response}    GET                                                                                                                                                                                                                                                                                      
@@ -29,7 +32,8 @@ PUT Tracks
     RETURN       ${response}
 
 Delete Tracks
-    [Arguments]                                                                                                                                                                                                                                                                        
+    [Arguments] 
+    ${auth}     Retorna Bearer Token                                                                                                                                                                                                                                                                       
     ${headers}     Create Dictionary                                                                                                                                                                                                                                                                        
     ...            Authorization=${auth} 
     ${response}    GET                                                                                                                                                                                                                                                                                      

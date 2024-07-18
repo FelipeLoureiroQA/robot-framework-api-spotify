@@ -2,11 +2,10 @@
 
 Resource    ../resources/Variables.robot
 
+Documentation    API test /tracks
+
 *** Test Cases ***
 
-Bearer token
-   ${auth}        Retorna Bearer Token
-   Set Global Variable    ${auth} 
 Listas musicas
     ${response}    GET Tracks       ${auth}
     Status Should Be    200    ${response}
