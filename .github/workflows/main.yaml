@@ -41,8 +41,8 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot -d ./tests/reports tests
-      
+          robot --loglevel WARN -d ./tests/reports tests
+        # robot -d ./tests/reports tests
 
       - name: Salvando o report
         uses: actions/upload-artifact@v4
