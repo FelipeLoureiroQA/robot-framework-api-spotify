@@ -5,4 +5,10 @@ Library    ../env_setup.py
 
 Resource    ../resources/Variables.robot
 *** Variables ***
-${auth}    value
+${auth}    ***SENSITIVE***
+
+*Keywords*
+Retorna Bearer Token
+    ${auth}    Get Environment Variable    token 
+    ${auth}    Catenate    Bearer    ${auth}
+    RETURN  ${auth}
